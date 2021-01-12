@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>
+        Nomor 1
+        <p id="meet"></p>
+      </li>
+      <li>
+        Nomor 2
+        <p id="furniture"></p>
+      </li>
+      <li>
+        Nomor 3
+        <p id="electronic"></p>
+      </li>
+      <li>
+        Nomor 5
+        <p id="brow"></p>
+      </li>
+    </ul>
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="text/javascript">
+      $.getJSON("inventory_list.json", function (result) {
+        console.log(result);
+        $.each(result, function (i) {
+          if (result[i].type === "furniture") {
+            document.getElementById("furniture").innerHTML +=
+              "ID :" +
+              result[i].inventory_id +
+              "<br>Nama :" +
+              result[i].name +
+              "<br>Type :" +
+              result[i].type +
+              "<br><br>";
+          } else if (result[i].type === "electronic") {
+            document.getElementById("electronic").innerHTML +=
+              "ID :" +
+              result[i].inventory_id +
+              "<br>Nama :" +
+              result[i].name +
+              "<br>Type :" +
+              result[i].type +
+              "<br><br>";
+          }
+          var tags = result[i].tags;
+          function check(t) {
+            return t === "brown";
+          }
+          document.getElementById("brow").innerHTML += tags.find(check);
+          var meet = result[i].placement.name;
+          if (meet === "Meeting Room") {
+            document.getElementById("meet").innerHTML +=
+              "ID :" +
+              result[i].inventory_id +
+              "<br>Nama :" +
+              result[i].name +
+              "<br>Type :" +
+              result[i].placement.name +
+              "<br><br>";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
