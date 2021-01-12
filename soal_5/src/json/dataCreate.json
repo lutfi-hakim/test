@@ -1,0 +1,22 @@
+{
+    "noted": [
+        {
+            "_id": "ss001",
+            "name": "Daily Stand Up",
+            "content": "1. Dont forget prepare your report and any blocker in Front end. 2. Telling Project Manager for new assignment. ",
+            "status": "Complete"
+          },
+          {
+            "_id": "ss002",
+            "name": "Meeting With Client A",
+            "content": "1. Loream Ipsum Dolor Amet. 2. Loream Ipsum Dolor Amet",
+            "status": "Set as Complete"
+          },
+          {
+            "_id": "ss003",
+            "name": "Meeting With Client B",
+            "content": "1. Loream Ipsum Dolor Amet. 2. Loream Ipsum Dolor Amet",
+            "status": "Set as Complete"
+          }
+    ]
+}
